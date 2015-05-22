@@ -83,20 +83,38 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
+            <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="475">
               <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46422338" vertical-offset="0" max-vertical-offset="627">
-              <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="627">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/data/RequestManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="665">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TingAPI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/utils/TingAPI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.7307692" vertical-offset="1083" max-vertical-offset="1957">
+              <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -105,12 +123,9 @@
       <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="950">
+            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1083">
               <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-              <folding>
-                <element signature="e#457#458#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,18 +133,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="817">
+            <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="817">
               <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="attrs.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/libs/SlidingUpPanel/res/values/attrs.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="532">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1133,7 +1138,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/widget/RoundImageView.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menus.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/model/Songs.java" />
@@ -1179,11 +1183,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/song_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/CommentActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/utils/TingAPI.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_song_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/MainActivity.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/data/RequestManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/music/ting/utils/TingAPI.java" />
       </list>
     </option>
   </component>
@@ -1238,17 +1243,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ting" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1388,10 +1382,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1415,7 +1405,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ting" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1446,6 +1440,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1572,6 +1570,22 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1587,13 +1601,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ting" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1626,11 +1651,11 @@
       <recent name="com.music.ting" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\developments\Ting\app\src\main\java\com\music\ting\data" />
       <recent name="D:\developments\Ting\app\libs" />
       <recent name="D:\developments\Ting\app\src\main\res\drawable-xhdpi" />
       <recent name="D:\developments\Ting\app\src\main\res\drawable" />
       <recent name="D:\developments\Ting\app\src\main\java\com\music\ting\ui\widget" />
-      <recent name="D:\developments\Ting\app\src\main\java\com\music\ting\data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\developments\Ting\app\src\main\res\drawable" />
@@ -1638,8 +1663,8 @@
       <recent name="D:\developments\Ting\app\src\main\res\values\colors" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.music.ting.adapter" />
       <recent name="com.music.ting.utils" />
+      <recent name="com.music.ting.adapter" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.MainActivity">
@@ -1888,8 +1913,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1320" height="784" extended-state="0" />
-    <editor active="true" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1985,11 +2010,25 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="665">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="475">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="627">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1083">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2001,10 +2040,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/SlidingUpPanel/res/values/attrs.xml">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="532">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="475">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="627">
+          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1083">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="817">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/ui/activity/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="665">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="437" max-vertical-offset="817">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -2018,14 +2113,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9642857" vertical-offset="59" max-vertical-offset="646">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_fa_home.png">
@@ -2193,21 +2287,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/SlidingUpPanel/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="418" max-vertical-offset="532">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/libs/SlidingUpPanel/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4973822" vertical-offset="0" max-vertical-offset="836">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="477">
@@ -2227,7 +2306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="598">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2243,10 +2321,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="10" max-vertical-offset="950">
           <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="e#457#458#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2254,16 +2329,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="475">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46422338" vertical-offset="0" max-vertical-offset="627">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="627">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/data/RequestManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="67" max-vertical-offset="665">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/music/ting/utils/TingAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7307692" vertical-offset="1083" max-vertical-offset="1957">
+          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
           <folding />
         </state>
       </provider>
