@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Ting</string>
+
+    <string name="action_about">关于我</string>
+    <string name="action_setting">设置</string>
+    <string name="action_share">分享</string>
+
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+
+    <string name="user_name">用户名</string>
+    <string name="user_bio">用户个性签名</string>
+    <string name="user_image">用户头像</string>
+
+    <string name="song_name">歌曲名</string>
+    <string name="song_artist">歌手</string>
+    <string name="song_bio">歌曲描述</string>
+
+    <string name="comment">评论</string>
+    <string name="comment_user_pic">评论人头像</string>
+    <string name="comment_user_name">评论人名称</string>
+    <string name="comment_content">评论信息</string>
+
+</resources>
