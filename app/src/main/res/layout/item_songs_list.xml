@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <com.music.ting.ui.widget.RoundImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/song_image"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/ic_empty_state"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"/>
+
+    <TextView
+        android:id="@+id/song_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:textSize="18sp"
+        android:text="@string/song_name"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+    <TextView
+        android:id="@+id/song_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_title"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="120dp"
+        android:text="@string/song_artist"
+        android:textSize="15sp"
+        android:textColor="#8A000000"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+    <TextView
+        android:id="@+id/song_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/song_artist"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="120dp"
+        android:text="@string/song_bio"
+        android:textSize="15sp"
+        android:textColor="#8A000000"
+        android:singleLine="true"
+        android:ellipsize="end"/>
+
+</RelativeLayout>
