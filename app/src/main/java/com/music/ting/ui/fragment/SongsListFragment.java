@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,15 +67,7 @@ public class SongsListFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Intent intent = new Intent(view.getContext(), CommentActivity.class);
-                Log.i("Ting", songsList.get(position).getsId().toString());
-                intent.putExtra("id",songsList.get(position).getId());
-                intent.putExtra("song_id",songsList.get(position).getsId());
-                intent.putExtra("share_user",songsList.get(position).getUserId());
-                intent.putExtra("song_title",songsList.get(position).getTitle());
-                intent.putExtra("song_artist",songsList.get(position).getArtist());
-                intent.putExtra("song_content",songsList.get(position).getContent());
-                intent.putExtra("song_picUrl",songsList.get(position).getUrlPic());
-                intent.putExtra("comment_count",songsList.get(position).getCommentsCount());
+                intent.putExtra("Songs",songsList.get(position));
                 startActivity(intent);
             }
         });

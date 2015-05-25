@@ -63,6 +63,53 @@ public class CommentActivity extends BaseActivity {
         });
 
         getData();
+
+//        SongPlayFragment songPlayFragment = new SongPlayFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.container,songPlayFragment)
+//                .show(songPlayFragment).commit();
+        slidingUpPanelLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
+        slidingUpPanelLayout.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
+            @Override
+            public void onPanelSlide(View panel, float slideOffset) {
+                Log.i(TAG, "onPanelSlide, offset " + slideOffset);
+
+            }
+
+            @Override
+            public void onPanelExpanded(View panel) {
+                Log.i(TAG, "onPanelExpanded");
+                playImage.setImageResource(R.drawable.ic_ting_music);
+            }
+
+            @Override
+            public void onPanelCollapsed(View panel) {
+                Log.i(TAG, "onPanelCollapsed");
+                playImage.setImageResource(R.drawable.ic_play_black_round);
+            }
+
+            @Override
+            public void onPanelAnchored(View panel) {
+                Log.i(TAG, "onPanelAnchored");
+            }
+
+            @Override
+            public void onPanelHidden(View panel) {
+                Log.i(TAG, "onPanelHidden");
+            }
+        });
+
+        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if(dy < 0){ //当用户向上滑时，隐藏SlidingUpPanelLayout
+                    slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
+                }else{//当用户向上滑时，显示SlidingUpPanelLayout
+                    slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
+                }
+            }
+        });
+
     }
 
     public void getData(){
@@ -70,9 +117,14 @@ public class CommentActivity extends BaseActivity {
         recyclerView = (RecyclerView) this.findViewById(R.id.recyclerView);
         commentSwipe = (SwipeRefreshLayout) this.findViewById(R.id.comment_swipe);
         songImage = (ImageView) findViewById(R.id.song_image);
+        songLargeImage = (ImageView) findViewById(R.id.song_image_large);
         songTitle = (TextView) findViewById(R.id.song_title);
         songArtist = (TextView) findViewById(R.id.song_artist);
-
+        playImage = (ImageView) findViewById(R.id.play);
+        repeatImage = (ImageView) findViewById(R.id.repeat);
+        playBtnIamge = (ImageView) findViewById(R.id.play_btn);
+        fwdIamge = (ImageView) findViewById(R.id.fwd);
+        shuffleIamge = (ImageView) findViewById(R.id.shuffle);
 
         commentSwipe.post(new Runnable() {
             @Override
@@ -86,14 +138,12 @@ public class CommentActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(CommentActivity.this));
 
         Intent intent = getIntent();
-        songs.setId(intent.getIntExtra("id",0));
-        songs.setsId(intent.getLongExtra("song_id", 0));
-        songs.setUserId(intent.getIntExtra("share_user",0));
-        songs.setTitle(intent.getStringExtra("song_title"));
-        songs.setArtist(intent.getStringExtra("song_artist"));
-        songs.setContent(intent.getStringExtra("song_content"));
-        songs.setUrlPic(intent.getStringExtra("song_picUrl"));
-        songs.setCommentsCount(intent.getIntExtra("comment_count",0));
+        songs = intent.getParcelableExtra("Songs");
+
+        Picasso.with(CommentActivity.this).load(songs.getUrlPic()).into(songImage);
+        Picasso.with(CommentActivity.this).load(songs.getUrlPic()).into(songLargeImage);
+        songTitle.setText(songs.getTitle());
+        songArtist.setText(songs.getArtist());
 
         getSongCommentById(songs.getId());
 
