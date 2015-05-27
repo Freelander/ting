@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/lv_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00b5ad"
+        android:orientation="vertical">
+
+        <com.music.ting.ui.widget.RoundImageView
+            android:id="@+id/user_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/user_image"
+            android:src="@drawable/ic_avatar" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/user_name"
+                android:textSize="14sp"
+                android:textColor="#ffff"/>
+            <TextView
+                android:id="@+id/user_bio"
+                android:layout_below="@id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/user_bio"
+                android:textSize="14sp"
+                android:textColor="#ffff"/>
+
+            </RelativeLayout>
+    </LinearLayout>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ting_drawer_list"
+        android:layout_marginTop="8dp"
+        android:divider="@null"
+        android:cacheColorHint="@android:color/transparent"/>
+
+
+</LinearLayout>

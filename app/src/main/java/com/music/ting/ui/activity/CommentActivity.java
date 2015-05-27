@@ -64,9 +64,6 @@ public class CommentActivity extends BaseActivity {
 
         getData();
 
-//        SongPlayFragment songPlayFragment = new SongPlayFragment();
-//        getSupportFragmentManager().beginTransaction().add(R.id.container,songPlayFragment)
-//                .show(songPlayFragment).commit();
         slidingUpPanelLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         slidingUpPanelLayout.setPanelSlideListener(new SlidingUpPanelLayout.PanelSlideListener() {
             @Override
@@ -107,6 +104,16 @@ public class CommentActivity extends BaseActivity {
                 }else{//当用户向上滑时，显示SlidingUpPanelLayout
                     slidingUpPanelLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
                 }
+            }
+        });
+
+        /**
+         * 刷新控件监听
+         */
+        commentSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getSongCommentById(songs.getId());
             }
         });
 

@@ -12,12 +12,15 @@
         <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
     </style>
 
-    <style name="toolbar_style" parent="ThemeOverlay.AppCompat.Dark">
+    <style name="toolbar_style" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/textColor</item>
+    </style>
+    <style name="toolbar_popup_theme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/navigation_text</item>
     </style>
 
     <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
