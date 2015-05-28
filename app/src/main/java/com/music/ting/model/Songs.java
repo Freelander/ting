@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Created by Jun on 2015/5/11.
- * 歌曲信息实体类
+ * 网路歌曲信息实体类
  */
 public class Songs implements Parcelable {
 
