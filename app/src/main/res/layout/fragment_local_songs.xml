@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sothree="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/local_songs_list"
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/local_sliding_panel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:umanoDragView="@+id/dragView"
+        sothree:umanoOverlay="true"
+        sothree:umanoPanelHeight="68dp"
+        sothree:umanoParalaxOffset="100dp"
+        sothree:umanoShadowHeight="4dp">
+
+        <ListView
+            android:id="@+id/local_songs_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+        <!-- SLIDING LAYOUT -->
+        <include layout="@layout/fragment_panel"/>
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
 </LinearLayout>
