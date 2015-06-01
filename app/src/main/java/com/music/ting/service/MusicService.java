@@ -1,6 +1,5 @@
 package com.music.ting.service;
 
-import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -56,7 +55,6 @@ public class MusicService extends Service {
     public static final int MODE_RANDOM = 2;//随机播放
     public static final int MODE_SEQUENCE = 3;//按顺序播放
 
-    private Notification notification;//通知
 
     private Handler handler = new Handler(){
         @Override
@@ -93,9 +91,10 @@ public class MusicService extends Service {
     }
 
     private void toUpdateProgress() {
-        if(mediaPlayer != null){
+        if(mediaPlayer != null ){
             int progress = mediaPlayer.getCurrentPosition();
             Intent intent = new Intent();
+            intent.setAction(ACTION_UPDATE_PROGRESS);
             intent.putExtra(ACTION_UPDATE_PROGRESS,progress);
             sendBroadcast(intent);
             handler.sendEmptyMessageDelayed(updateProgress,1000);
@@ -196,6 +195,26 @@ public class MusicService extends Service {
         isPlaying = true;
     }
 
+    /**
+     *
+     * @param playUrl
+     */
+    private void playUrl(String playUrl, int pCurrentPosition){
+        currentPosition = pCurrentPosition;
+        mediaPlayer.reset();// 把各项参数恢复到初始状态
+        try{
+            mediaPlayer.setDataSource(playUrl);
+            mediaPlayer.prepare();// 进行缓冲
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        handler.sendEmptyMessage(updateProgress);
+
+        isPlaying = true;
+
+    }
+
     private void stop(){
         mediaPlayer.stop();
         isPlaying = false;
@@ -262,6 +281,11 @@ public class MusicService extends Service {
             play(currentMusic,currentPosition);
         }
 
+        public void startPlay(String playUrl, int currentPosition){
+            playUrl(playUrl, currentPosition);
+            changeMode(MODE_ONE_LOOP);
+        }
+
         public void stopPlay(){
             stop();
         }
@@ -282,6 +306,12 @@ public class MusicService extends Service {
          */
         public void  changeMode(){
             currentMode = (currentMode + 1) % 4;
+            Log.v(TAG, "[NatureBinder] changeMode : " + currentMode);
+            Toast.makeText(MusicService.this, MODE_DESC[currentMode], Toast.LENGTH_SHORT).show();
+        }
+
+        public void  changeMode(int pCurrentMode){
+            currentMode = pCurrentMode;
             Log.v(TAG, "[NatureBinder] changeMode : " + currentMode);
             Toast.makeText(MusicService.this, MODE_DESC[currentMode], Toast.LENGTH_SHORT).show();
         }
