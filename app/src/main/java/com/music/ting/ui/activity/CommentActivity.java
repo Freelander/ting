@@ -9,12 +9,17 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -48,6 +53,7 @@ public class CommentActivity extends BaseActivity {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout commentSwipe;
     private Toolbar toolbar;
+    private ShareActionProvider shareActionProvider;
 
     private SlidingUpPanelLayout slidingUpPanelLayout;
     private ImageView songImage;//歌曲封面
@@ -153,6 +159,11 @@ public class CommentActivity extends BaseActivity {
             }
         });
 
+        // 添加来电监听事件
+        TelephonyManager telManager = (TelephonyManager) getSystemService(
+                Context.TELEPHONY_SERVICE); // 获取系统服务
+        telManager.listen(new MobliePhoneStateListener(),
+                PhoneStateListener.LISTEN_CALL_STATE);
 
     }
 
@@ -252,6 +263,30 @@ public class CommentActivity extends BaseActivity {
     }
 
     /**
+     * 电话监听类
+     */
+    private boolean  phoneState = false; //电话状态
+    private class MobliePhoneStateListener extends PhoneStateListener {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE: // 挂机状态
+                    if(phoneState){
+                        play(playUrl);
+                    }
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK:   //通话状态
+                case TelephonyManager.CALL_STATE_RINGING:   //响铃状态
+                    musicBinder.stopPlay();
+                    phoneState = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    /**
      * 点击监听器
      */
     class ViewOnClickListener implements View.OnClickListener {
@@ -333,6 +368,27 @@ public class CommentActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.song_menu, menu);
 
+        MenuItem item = menu.findItem(R.id.action_share);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_share:
+                /**
+                 * 分享
+                 */
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "我在 http://tinger.herokuapp.com/ 这里听" +
+                          songs.getTitle() + " by "
+                        + songs.getArtist() + " @G军仔");
+                shareIntent.setType("text/plain");
+                startActivity(shareIntent);
+                break;
+        }
         return true;
     }
 

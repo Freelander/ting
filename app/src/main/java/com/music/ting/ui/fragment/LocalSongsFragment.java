@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -127,6 +129,12 @@ public class LocalSongsFragment extends Fragment {
 
             }
         });
+
+        // 添加来电监听事件
+        TelephonyManager telManager = (TelephonyManager) getActivity().getSystemService(
+                Context.TELEPHONY_SERVICE); // 获取系统服务
+        telManager.listen(new MobliePhoneStateListener(),
+                PhoneStateListener.LISTEN_CALL_STATE);
 
         return view;
     }
@@ -256,7 +264,7 @@ public class LocalSongsFragment extends Fragment {
 
     }
 
-    private void play(int position, int resId){
+    private void play(int position){
         if(musicBinder.isPlaying()){
             musicBinder.stopPlay();
             playImage.setImageResource(R.drawable.ic_play_black_round);
@@ -274,10 +282,10 @@ public class LocalSongsFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.play:
-                    play(currentMusic,0);
+                    play(currentMusic);
                     break;
                 case R.id.play_btn:
-                    play(currentMusic,0);
+                    play(currentMusic);
                     break;
                 case R.id.fwd:
                     musicBinder.toPlayNext();
@@ -318,6 +326,30 @@ public class LocalSongsFragment extends Fragment {
                             shuffleImage.setImageResource(R.drawable.ic_shuffle_dark);
                             break;
                     }
+                    break;
+            }
+        }
+    }
+
+    /**
+     * 电话监听类
+     */
+    private boolean  phoneState = false; //电话状态
+    private class MobliePhoneStateListener extends PhoneStateListener {
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE: // 挂机状态
+                    if(phoneState){
+                        play(currentMusic);
+                    }
+                    break;
+                case TelephonyManager.CALL_STATE_OFFHOOK:   //通话状态
+                case TelephonyManager.CALL_STATE_RINGING:   //响铃状态
+                    musicBinder.stopPlay();
+                    phoneState = true;
+                    break;
+                default:
                     break;
             }
         }
