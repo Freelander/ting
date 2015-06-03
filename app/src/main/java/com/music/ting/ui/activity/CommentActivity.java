@@ -382,9 +382,9 @@ public class CommentActivity extends BaseActivity {
                  */
                 Intent shareIntent = new Intent();
                 shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_TEXT, "我在 http://tinger.herokuapp.com/ 这里听" +
-                          songs.getTitle() + " by "
-                        + songs.getArtist() + " @G军仔");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, songs.getTitle() + " by "
+                        + songs.getArtist() + "\n" + songs.getContent() +
+                        " 分享来自 http://tinger.herokuapp.com/ ");
                 shareIntent.setType("text/plain");
                 startActivity(shareIntent);
                 break;
