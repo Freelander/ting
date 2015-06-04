@@ -7,6 +7,7 @@ import com.android.volley.VolleyError;
 import com.music.ting.Ting;
 import com.music.ting.data.GsonRequest;
 import com.music.ting.model.Comments;
+import com.music.ting.model.OnLineSongs;
 import com.music.ting.model.Songs;
 import com.music.ting.model.UserInfo;
 
@@ -41,10 +42,7 @@ public class TingAPI {
      * 例：http://inmusic.sinaapp.com/xiami_api/ + s_id(歌曲虾米ID)
      */
     private final static String TingSongsAddressApi = " http://inmusic.sinaapp.com/xiami_api/";
-    /**
-     * 歌曲播放Id
-     */
-    private final static int sId = 0;
+
 
 
     /**
@@ -93,6 +91,18 @@ public class TingAPI {
         return new GsonRequest<List<Comments>>(commentUrl,
                 Comments.class,buildDefaultErrorListener());
     }
+
+    /**
+     * 根据歌曲播放Id获取歌曲信息
+     * @param s_Id
+     * @return
+     */
+    public static GsonRequest<OnLineSongs> getOnLineSongsRequest(long s_Id){
+        final String onLineSongsUrl = TingSongsAddressApi + s_Id;
+        return new GsonRequest<OnLineSongs>(onLineSongsUrl, OnLineSongs.class,
+                null, buildDefaultErrorListener());
+    }
+
 
     /**
      * 响应失败
