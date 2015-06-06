@@ -1,11 +1,9 @@
 package com.music.ting.adapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 
 import com.music.ting.R;
 import com.music.ting.model.LocalSongs;
-import com.music.ting.utils.MediaUtils;
 
 import java.util.List;
 
@@ -27,8 +25,8 @@ public class LocalSongsAdapter extends SimpleBaseAdapter<LocalSongs> {
                 .setText(R.id.song_artist,localSongs.getArtist())
                 .setText(R.id.song_content,localSongs.getAlbum());
 
-        Bitmap bitmap = MediaUtils.getArtwork(context, localSongs.getId(),
-                localSongs.getAlbumId(), true, true);
-        holder.setImageBitmap(R.id.song_image,bitmap);
+//        Bitmap bitmap = MediaUtils.getArtwork(context, localSongs.getId(),
+//                localSongs.getAlbumId(), true, true);
+//        holder.setImageBitmap(R.id.song_image,bitmap);
     }
 }

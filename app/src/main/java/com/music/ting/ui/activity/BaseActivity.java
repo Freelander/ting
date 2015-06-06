@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.music.ting.R;
+import com.music.ting.ui.fragment.DownLoadFragment;
 
 /**
  * Created by Jun on 2015/5/15.
@@ -36,6 +37,11 @@ public class BaseActivity extends ActionBarActivity {
         switch (item.getItemId()){
             case R.id.action_setting:
                 Toast.makeText(this,"设置",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_download_setting:
+                DownLoadFragment downLoad = new DownLoadFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.container,downLoad).
+                        show(downLoad).commit();
                 break;
             case R.id.action_about:
                 Intent intent = new Intent(this,AboutActivity.class);

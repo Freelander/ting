@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.music.ting.R;
@@ -31,10 +32,13 @@ import com.music.ting.adapter.CommentAdapter;
 import com.music.ting.data.GsonRequest;
 import com.music.ting.data.RequestManager;
 import com.music.ting.model.Comments;
+import com.music.ting.model.FileInfo;
 import com.music.ting.model.OnLineSongs;
 import com.music.ting.model.Songs;
+import com.music.ting.service.DownloadService;
 import com.music.ting.service.MusicService;
 import com.music.ting.service.MusicService.MusicBinder;
+import com.music.ting.ui.fragment.DownLoadFragment;
 import com.music.ting.utils.MediaUtils;
 import com.music.ting.utils.TingAPI;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
@@ -387,6 +391,16 @@ public class CommentActivity extends BaseActivity {
                         " 分享来自 http://tinger.herokuapp.com/ ");
                 shareIntent.setType("text/plain");
                 startActivity(shareIntent);
+                break;
+            case R.id.action_download:
+                final FileInfo file = new FileInfo(0, playUrl,songs.getArtist() + " - " +
+                        songs.getTitle()+".MP3", 0, 0);
+                Intent intent = new Intent(CommentActivity.this, DownloadService.class);
+                intent.setAction(DownloadService.ACTION_START);
+                intent.putExtra("fileInfo", file);
+                startService(intent);
+                DownLoadFragment.isDownLoad = true;
+                Toast.makeText(CommentActivity.this,"加入下载队列",Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;

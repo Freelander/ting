@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -78,6 +79,7 @@ public class MainActivity extends BaseActivity {
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.container, localSongsFragment)
                                 .show(localSongsFragment).commit();
+
                         mDrawerLayout.closeDrawer(drawerLayout);
                         break;
 
@@ -105,6 +107,12 @@ public class MainActivity extends BaseActivity {
         DrawerListBean drawerListBean3 = new DrawerListBean("我的喜爱",R.drawable.like_bg_selector);
         drawerList.add(drawerListBean3);
         return drawerList;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
     }
 
 

@@ -25,7 +25,7 @@ public class MusicService extends Service {
 
     private MediaPlayer mediaPlayer;
 
-    private boolean isPlaying = false;
+    public static boolean isPlaying = false;
 
     private List<LocalSongs> localSongsList;
 

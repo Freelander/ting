@@ -26,6 +26,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.music.ting.R;
+import com.music.ting.Ting;
 import com.music.ting.adapter.LocalSongsAdapter;
 import com.music.ting.model.LocalSongs;
 import com.music.ting.service.MusicService;
@@ -84,6 +85,12 @@ public class LocalSongsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        localSongsList = MediaUtils.getLocalSongs(Ting.getInstance());
+        if(localSongsList.size() == 0){
+            view = inflater.inflate(R.layout.fragment_not_songs,container,false);
+            return view;
+        }
         view = inflater.inflate(R.layout.fragment_local_songs,container,false);
         initView();
 

@@ -1,10 +1,13 @@
 package com.music.ting.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Jun on 2015/5/28.
  * 本地歌曲信息实体类
  */
-public class LocalSongs {
+public class LocalSongs implements Parcelable {
 
     /**
      * 歌曲Id
@@ -102,4 +105,45 @@ public class LocalSongs {
     public void setUrl(String url) {
         this.url = url;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(this.id);
+        dest.writeString(this.title);
+        dest.writeString(this.artist);
+        dest.writeString(this.album);
+        dest.writeLong(this.albumId);
+        dest.writeLong(this.duration);
+        dest.writeLong(this.size);
+        dest.writeString(this.url);
+    }
+
+    public LocalSongs() {
+    }
+
+    private LocalSongs(Parcel in) {
+        this.id = in.readLong();
+        this.title = in.readString();
+        this.artist = in.readString();
+        this.album = in.readString();
+        this.albumId = in.readLong();
+        this.duration = in.readLong();
+        this.size = in.readLong();
+        this.url = in.readString();
+    }
+
+    public static final Parcelable.Creator<LocalSongs> CREATOR = new Parcelable.Creator<LocalSongs>() {
+        public LocalSongs createFromParcel(Parcel source) {
+            return new LocalSongs(source);
+        }
+
+        public LocalSongs[] newArray(int size) {
+            return new LocalSongs[size];
+        }
+    };
 }
