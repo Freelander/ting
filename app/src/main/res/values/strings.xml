@@ -5,6 +5,14 @@
     <string name="action_about">关于我</string>
     <string name="action_setting">设置</string>
     <string name="action_share">分享</string>
+    <string name="action_download">下载</string>
+    <string name="action_download_setting">下载管理</string>
+
+    <string name="download_progress">下载进度</string>
+    <string name="download_start">下载开始</string>
+    <string name="download_pause">暂停下载</string>
+    <string name="download_cancel">取消下载</string>
+    <string name="download_not">没有歌曲正在下载</string>
 
     <string name="open">打开</string>
     <string name="close">关闭</string>
@@ -16,6 +24,7 @@
     <string name="song_name">歌曲名</string>
     <string name="song_artist">歌手</string>
     <string name="song_bio">歌曲描述</string>
+    <string name="song_empty">很抱歉，没有扫描到歌曲</string>
 
     <string name="comment">评论</string>
     <string name="comment_user_pic">评论人头像</string>

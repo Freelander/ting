@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimaryDark">#5BBD72</color>
     <color name="colorPrimary">#5BBD72</color>
+    <color name="statusBarColor">#4caf50</color>
     <color name="textColor">#ffffff</color>
 
     <color name="selected_bg">#ffafffe5</color>
