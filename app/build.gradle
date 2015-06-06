@@ -32,6 +32,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.4.0'
     compile 'com.sothree.slidinguppanel:library:3.0.0'
     compile 'com.balysv:material-ripple:1.0.2'
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
 
     compile files('libs/gson-2.3.1.jar')
     compile files('libs/volley.jar')

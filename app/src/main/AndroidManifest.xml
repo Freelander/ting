@@ -29,9 +29,8 @@
         <activity
             android:name=".ui.activity.AboutActivity"
             android:label="@string/action_about"/>
-
-        <service android:name=".service.MusicService">
-        </service>
+        <service android:name=".service.MusicService"/>
+        <service android:name=".service.DownloadService"/>
     </application>
 
 </manifest>
