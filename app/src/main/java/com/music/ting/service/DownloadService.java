@@ -52,6 +52,7 @@ public class DownloadService extends Service {
             if(mTask != null){
                 mTask.isPause = true;
             }
+            stopService(intent);//停止服务
         }else if(ACTION_DELETE.equals(intent.getAction())){
             FileInfo fileInfo = (FileInfo) intent.getSerializableExtra("fileInfo");
             if(mTask != null){
@@ -60,6 +61,18 @@ public class DownloadService extends Service {
         }
 
         return super.onStartCommand(intent, flags, startId);
+    }
+
+
+    // Service被断开连接时回调该方法
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
     @Override

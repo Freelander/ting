@@ -89,16 +89,27 @@ public class DownLoadFragment extends Fragment {
                 songTitle.setText(mFileInfo.getfileName());
             } else if (DownloadService.ACTION_DELETE.equals(action)) {
                 isDownLoad = false;
+                stopService();
                 DownLoadFragment loadFragment = new DownLoadFragment();
                 getFragmentManager().beginTransaction().replace(R.id.container,loadFragment).
                         show(loadFragment).commit();
             }else if(DownloadService.ACTION_OK.equals(action)){
                 isDownLoad = false;
+                stopService();
                 DownLoadFragment loadFragment = new DownLoadFragment();
                 getFragmentManager().beginTransaction().replace(R.id.container,loadFragment).
                         show(loadFragment).commit();
+
             }
         }
+    }
+
+    /**
+     * 暂停服务
+     */
+    public void stopService(){
+        Intent intent = new Intent(view.getContext(),DownloadService.class);
+        view.getContext().stopService(intent);
     }
 
     class ViewOnClickListener implements View.OnClickListener {

@@ -69,9 +69,8 @@ public class DownloadTask {
         intent.setAction(DownloadService.ACTION_DELETE);
         context.sendBroadcast(intent);
 
+
     }
-
-
 
     /**
      * 下载线程
@@ -141,6 +140,7 @@ public class DownloadTask {
                     intent.setAction(DownloadService.ACTION_OK);
                     context.sendBroadcast(intent);
                     DownLoadFragment.isDownLoad = false;
+
                 }
 
             } catch (MalformedURLException e) {
