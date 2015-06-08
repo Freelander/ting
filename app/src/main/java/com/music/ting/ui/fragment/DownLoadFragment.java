@@ -39,6 +39,7 @@ public class DownLoadFragment extends Fragment {
 
         if (isDownLoad) {
             view = inflater.inflate(R.layout.fragment_download, container, false);
+            registerReceiver();
 
             downLoadControl = (ImageView) view.findViewById(R.id.download_control);
             cancelDownLoad = (ImageView) view.findViewById(R.id.delete_download);
@@ -54,9 +55,17 @@ public class DownLoadFragment extends Fragment {
         }
 
 
-        /**
-         * 注册广播
-         */
+
+
+
+        return view;
+    }
+
+    /**
+     * 注册广播
+     */
+    public void registerReceiver(){
+
         mReceiver = new ProgressReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction(DownloadService.ACTION_UPDATE);
@@ -64,15 +73,8 @@ public class DownLoadFragment extends Fragment {
         filter.addAction(DownloadService.ACTION_FILEINFO);
         filter.addAction(DownloadService.ACTION_OK);
         getActivity().registerReceiver(mReceiver, filter);
-
-
-        return view;
     }
 
-    public void onPause() {
-        super.onPause();
-        getActivity().unregisterReceiver(mReceiver);
-    }
 
     /**
      * 广播接收器
