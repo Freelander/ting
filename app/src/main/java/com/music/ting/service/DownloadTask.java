@@ -59,16 +59,30 @@ public class DownloadTask {
     }
 
     public void cancelDownload(){
-        //删除线程信息
-        mDao.deleteThread(mThreadInfo.getUrl(),mThreadInfo.getId());
-        File file = new File(DownloadService.DOWLOAD_PATH,mFileInfo.getfileName());
-        //删除文件
-        if(file.exists()){
-            file.delete();
-        }
-        intent.setAction(DownloadService.ACTION_DELETE);
-        context.sendBroadcast(intent);
 
+        if(mFileInfo != null) {
+            //读取数据库的线程信息
+            List<ThreadInfo> threadInfos = mDao.getTreads(mFileInfo.getUrl());
+            if(threadInfos.size() == 0){
+                //初始化线程信息
+                mThreadInfo = new ThreadInfo(0,mFileInfo.getUrl(),0,mFileInfo.getLength(),0);
+            }else{
+                mThreadInfo = threadInfos.get(0);
+            }
+            //删除线程信息
+            mDao.deleteThread(mThreadInfo.getUrl(),mThreadInfo.getId());
+            File file = new File(DownloadService.DOWLOAD_PATH, mFileInfo.getfileName());
+            //删除文件
+            if (file.exists()) {
+                file.delete();
+            }
+            intent.setAction(DownloadService.ACTION_DELETE);
+            context.sendBroadcast(intent);
+
+        }else{
+            intent.setAction(DownloadService.ACTION_DELETE);
+            context.sendBroadcast(intent);
+        }
 
     }
 

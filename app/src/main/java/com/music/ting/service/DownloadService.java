@@ -52,12 +52,13 @@ public class DownloadService extends Service {
             if(mTask != null){
                 mTask.isPause = true;
             }
-            stopService(intent);//停止服务
+            stopSelf(); //停止服务
         }else if(ACTION_DELETE.equals(intent.getAction())){
+            stopSelf();
             FileInfo fileInfo = (FileInfo) intent.getSerializableExtra("fileInfo");
-            if(mTask != null){
-                mTask.cancelDownload();
-            }
+            mTask = new DownloadTask(DownloadService.this,fileInfo);
+            mTask.cancelDownload();
+
         }
 
         return super.onStartCommand(intent, flags, startId);

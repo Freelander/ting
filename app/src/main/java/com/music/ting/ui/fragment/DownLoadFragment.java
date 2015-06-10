@@ -112,24 +112,24 @@ public class DownLoadFragment extends Fragment {
     public void stopService(){
         Intent intent = new Intent(view.getContext(),DownloadService.class);
         view.getContext().stopService(intent);
+
     }
 
     class ViewOnClickListener implements View.OnClickListener {
 
         @Override
         public void onClick(View v) {
+            Intent intent = new Intent(view.getContext(), DownloadService.class);
             switch (v.getId()) {
                 case R.id.download_control:
                     if (isPause) {
                         downLoadControl.setImageResource(R.drawable.ic_fa_arrow_down);
-                        Intent intent = new Intent(view.getContext(), DownloadService.class);
                         intent.setAction(DownloadService.ACTION_STOP);
                         intent.putExtra("fileInfo", mFileInfo);
                         getActivity().startService(intent);
                         isPause = false;
                     } else {
                         downLoadControl.setImageResource(R.drawable.ic_fa_pause);
-                        Intent intent = new Intent(view.getContext(), DownloadService.class);
                         intent.setAction(DownloadService.ACTION_START);
                         intent.putExtra("fileInfo", mFileInfo);
                         getActivity().startService(intent);
@@ -137,7 +137,7 @@ public class DownLoadFragment extends Fragment {
                     }
                     break;
                 case R.id.delete_download:
-                    Intent intent = new Intent(view.getContext(), DownloadService.class);
+                    stopService();
                     intent.setAction(DownloadService.ACTION_DELETE);
                     intent.putExtra("fileInfo", mFileInfo);
                     getActivity().startService(intent);
