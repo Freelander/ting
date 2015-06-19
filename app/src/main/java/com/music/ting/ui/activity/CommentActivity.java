@@ -48,6 +48,7 @@ import java.util.List;
 
 /**
  * Created by Jun on 2015/5/20.
+ *
  */
 public class CommentActivity extends BaseActivity {
 
@@ -405,6 +406,8 @@ public class CommentActivity extends BaseActivity {
         }
         return true;
     }
+
+
 
 
     /**

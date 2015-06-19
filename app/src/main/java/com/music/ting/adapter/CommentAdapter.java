@@ -1,10 +1,16 @@
 package com.music.ting.adapter;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +39,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private List<Comments> commentsList;
     private Songs songs;
     private Context mContext;
+    private boolean isLike = false;
 
     public CommentAdapter(Context mContext, List<Comments> commentsList, Songs songs){
         this.mContext = mContext;
@@ -131,6 +138,19 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             request.setSuccessListener(response);
             RequestManager.addRequest(request, songs.getUserId());
 
+            ((SongViewHolder) viewHolder).songLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(isLike){
+                        likeAnimator(((SongViewHolder) viewHolder).songLike,R.drawable.ic_like);
+                        isLike = false;
+                    }else{
+                        likeAnimator(((SongViewHolder) viewHolder).songLike,R.drawable.ic_like_selector);
+                        isLike = true;
+                    }
+                }
+            });
+
         }else if(viewHolder instanceof SloganViewHolder){ //为标识View绑定值
 
             ((SloganViewHolder) viewHolder).slogan.setText("评论");
@@ -168,6 +188,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((NotCommentViewHolder) viewHolder).notComment.setText("没有人评论");
         }
     }
+
 
     /**
      * 判断有几个View
@@ -246,5 +267,45 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
             notComment = (TextView) itemView.findViewById(R.id.not_comment);
         }
+    }
+
+    /**
+     * 动画
+     * @param imageView
+     * @param resourceId
+     */
+    private void likeAnimator(final ImageView imageView,  final int resourceId) {
+
+        AnimatorSet animatorSet = new AnimatorSet();
+
+        ObjectAnimator rotationAnim = ObjectAnimator.ofFloat(imageView, "rotation", 0f, 360f);
+        rotationAnim.setDuration(300);
+        rotationAnim.setInterpolator(new AccelerateInterpolator());
+
+        ObjectAnimator bounceAnimX = ObjectAnimator.ofFloat(imageView, "scaleX", 0.2f, 1f);
+        bounceAnimX.setDuration(300);
+        bounceAnimX.setInterpolator(new OvershootInterpolator());
+        bounceAnimX.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                imageView.setImageResource(resourceId);
+            }
+        });
+
+
+        ObjectAnimator bounceAnimY = ObjectAnimator.ofFloat(imageView, "scaleY", 0.2f, 1f);
+        bounceAnimY.setDuration(300);
+        bounceAnimY.setInterpolator(new OvershootInterpolator());
+        bounceAnimY.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                imageView.setImageResource(resourceId);
+            }
+        });
+
+        animatorSet.play(rotationAnim);
+        animatorSet.play(bounceAnimX).with(bounceAnimY).after(rotationAnim);
+
+        animatorSet.start();
     }
 }
