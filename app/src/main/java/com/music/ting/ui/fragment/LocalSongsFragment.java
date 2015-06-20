@@ -14,7 +14,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,7 +147,6 @@ public class LocalSongsFragment extends Fragment {
 
 
     public void onResume(){
-        Log.v(TAG, "OnResume register Progress Receiver");
         super.onResume();
         registerReceiver();
         if(musicBinder != null){
@@ -162,18 +160,15 @@ public class LocalSongsFragment extends Fragment {
     }
 
     public void onPause(){
-        Log.v(TAG, "OnPause unregister Progress Receiver");
         super.onPause();
         getActivity().unregisterReceiver(progressReceiver);
     }
 
     public void onStop(){
-        Log.v(TAG, "OnStop");
         super.onStop();
     }
 
     public void onDestroy(){
-        Log.v(TAG, "OnDestroy");
         super.onDestroy();
         if(musicBinder != null){
             getActivity().unbindService(serviceConnection);
@@ -353,8 +348,10 @@ public class LocalSongsFragment extends Fragment {
                     break;
                 case TelephonyManager.CALL_STATE_OFFHOOK:   //通话状态
                 case TelephonyManager.CALL_STATE_RINGING:   //响铃状态
-                    musicBinder.stopPlay();
-                    phoneState = true;
+                    if(musicBinder.isPlaying()){ //判断歌曲是否在播放
+                        musicBinder.stopPlay();
+                        phoneState = true;
+                    }
                     break;
                 default:
                     break;

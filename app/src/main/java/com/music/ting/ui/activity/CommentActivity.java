@@ -282,8 +282,10 @@ public class CommentActivity extends BaseActivity {
                     break;
                 case TelephonyManager.CALL_STATE_OFFHOOK:   //通话状态
                 case TelephonyManager.CALL_STATE_RINGING:   //响铃状态
-                    musicBinder.stopPlay();
-                    phoneState = true;
+                    if(musicBinder.isPlaying()){ //判断歌曲是否在播放
+                        musicBinder.stopPlay();
+                        phoneState = true;
+                    }
                     break;
                 default:
                     break;
