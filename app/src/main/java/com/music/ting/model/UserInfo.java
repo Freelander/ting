@@ -1,10 +1,13 @@
 package com.music.ting.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Jun on 2015/5/11.
  * 用户信息实体类
  */
-public class UserInfo {
+public class UserInfo implements Parcelable {
     /**
      * 用户Id
      */
@@ -20,13 +23,13 @@ public class UserInfo {
     /**
      * 个性标签
      */
-    private String Bio;
+    private String bio;
     /**
      * 用户头像
      */
     private Avatar avatar;
 
-    public class Avatar{
+    public static class Avatar implements Parcelable {
         /**
          * 用户头像URL
          */
@@ -39,6 +42,33 @@ public class UserInfo {
         public void seturl(String url) {
             this.url = url;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.url);
+        }
+
+        public Avatar() {
+        }
+
+        private Avatar(Parcel in) {
+            this.url = in.readString();
+        }
+
+        public static final Creator<Avatar> CREATOR = new Creator<Avatar>() {
+            public Avatar createFromParcel(Parcel source) {
+                return new Avatar(source);
+            }
+
+            public Avatar[] newArray(int size) {
+                return new Avatar[size];
+            }
+        };
     }
 
     public int getId() {
@@ -66,11 +96,11 @@ public class UserInfo {
     }
 
     public String getBio() {
-        return Bio;
+        return bio;
     }
 
     public void setBio(String bio) {
-        Bio = bio;
+        this.bio = bio;
     }
 
     public Avatar getAvatar() {
@@ -87,8 +117,43 @@ public class UserInfo {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", Bio='" + Bio + '\'' +
+                ", Bio='" + bio + '\'' +
                 ", avatar=" + avatar +
                 '}';
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.id);
+        dest.writeString(this.name);
+        dest.writeString(this.email);
+        dest.writeString(this.bio);
+        dest.writeParcelable(this.avatar, flags);
+    }
+
+    public UserInfo() {
+    }
+
+    private UserInfo(Parcel in) {
+        this.id = in.readInt();
+        this.name = in.readString();
+        this.email = in.readString();
+        this.bio = in.readString();
+        this.avatar = in.readParcelable(Avatar.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<UserInfo> CREATOR = new Parcelable.Creator<UserInfo>() {
+        public UserInfo createFromParcel(Parcel source) {
+            return new UserInfo(source);
+        }
+
+        public UserInfo[] newArray(int size) {
+            return new UserInfo[size];
+        }
+    };
 }
