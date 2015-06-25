@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,10 +22,12 @@ import com.music.ting.data.RequestManager;
 import com.music.ting.model.Comments;
 import com.music.ting.model.Songs;
 import com.music.ting.model.UserInfo;
+import com.music.ting.ui.activity.UserProfileActivity;
 import com.music.ting.ui.widget.RoundImageView;
 import com.music.ting.utils.TingAPI;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -37,9 +40,11 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     private final int COMMENT = 2;
 
     private List<Comments> commentsList;
+    private HashMap hashMap = new HashMap();//用来存储评论用户信息
     private Songs songs;
     private Context mContext;
     private boolean isLike = false;
+    private UserInfo mUserInfo;
 
     public CommentAdapter(Context mContext, List<Comments> commentsList, Songs songs){
         this.mContext = mContext;
@@ -103,7 +108,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
      * @param position
      */
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, final int position) {
         if(viewHolder instanceof SongViewHolder){ //为SongViewHolder里面属性绑定值
 
             ((SongViewHolder) viewHolder).songTitle.setText(songs.getTitle());
@@ -125,6 +130,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             final Response.Listener<UserInfo> response = new Response.Listener<UserInfo>() {
                 @Override
                 public void onResponse(UserInfo userInfo) {
+                    mUserInfo = userInfo;
                     Picasso.with(mContext)
                             .load(userInfo.getAvatar().geturl())
                             .placeholder(R.drawable.ic_default_pic)
@@ -141,13 +147,22 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((SongViewHolder) viewHolder).songLike.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(isLike){
-                        likeAnimator(((SongViewHolder) viewHolder).songLike,R.drawable.ic_like);
+                    if (isLike) {
+                        likeAnimator(((SongViewHolder) viewHolder).songLike, R.drawable.ic_like);
                         isLike = false;
-                    }else{
-                        likeAnimator(((SongViewHolder) viewHolder).songLike,R.drawable.ic_like_selector);
+                    } else {
+                        likeAnimator(((SongViewHolder) viewHolder).songLike, R.drawable.ic_like_selector);
                         isLike = true;
                     }
+                }
+            });
+
+            ((SongViewHolder) viewHolder).songShareUserPic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, UserProfileActivity.class);
+                    intent.putExtra("UserInfo", mUserInfo);
+                    mContext.startActivity(intent);
                 }
             });
 
@@ -156,6 +171,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((SloganViewHolder) viewHolder).slogan.setText("评论");
 
         }else if(viewHolder instanceof CommentViewHolder){ //为评论View绑定值
+
             //获取用户Id
             final int userId = commentsList.get(position - 2).getUserId();
 
@@ -166,6 +182,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             final Response.Listener<UserInfo> response = new Response.Listener<UserInfo>() {
                 @Override
                 public void onResponse(UserInfo userInfo) {
+                    hashMap.put(position-2,userInfo);
                     ((CommentViewHolder) viewHolder).commentUser.
                             setText(userInfo.getName());
                     Picasso.with(mContext)
@@ -181,9 +198,17 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             request.setSuccessListener(response);
             RequestManager.addRequest(request, userId);
 
-
             ((CommentViewHolder) viewHolder).commentContent.
                     setText(commentsList.get(position - 2).getContent());
+
+            ((CommentViewHolder) viewHolder).commentUserPic.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, UserProfileActivity.class);
+                    intent.putExtra("UserInfo", (UserInfo)hashMap.get(position-2));
+                    mContext.startActivity(intent);
+                }
+            });
         }else if(viewHolder instanceof NotCommentViewHolder){
             ((NotCommentViewHolder) viewHolder).notComment.setText("没有人评论");
         }
