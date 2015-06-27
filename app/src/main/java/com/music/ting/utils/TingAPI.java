@@ -9,7 +9,10 @@ import com.music.ting.data.GsonRequest;
 import com.music.ting.model.Comments;
 import com.music.ting.model.OnLineSongs;
 import com.music.ting.model.Songs;
-import com.music.ting.model.UserInfo;
+import com.music.ting.model.user.UserComments;
+import com.music.ting.model.user.UserInfo;
+import com.music.ting.model.user.UserLikeSongs;
+import com.music.ting.model.user.UserShareSongs;
 
 import java.util.List;
 
@@ -27,6 +30,13 @@ public class TingAPI {
     private final static String TingUserName = TingUserApi + "?username=";
 
     private final static String TingUserId = TingUserApi + "?id=";
+
+    private final static String TingUserShareSongs = "&include=songs";
+
+    private final static String TingUserLikeSongs = "&include=liked_songs";
+
+    private final static String TingUserComments = "&include=comments";
+
     /**
      * 获取歌曲信息
      */
@@ -66,6 +76,40 @@ public class TingAPI {
         return new GsonRequest<UserInfo>(userUrl, UserInfo.class,
                 null, buildDefaultErrorListener());
     }
+
+    /**
+     * 获取用户喜欢歌曲列表
+     * @param userId
+     * @return
+     */
+    public static GsonRequest<UserLikeSongs> getUserLikeSongs(int userId){
+        final String userLikeSongUrl = TingUserId + userId + TingUserLikeSongs;
+        return new GsonRequest<UserLikeSongs>(userLikeSongUrl, UserLikeSongs.class,
+                null,buildDefaultErrorListener());
+    }
+
+    /**
+     * 获取用户分享歌曲
+     * @param userId
+     * @return
+     */
+    public static GsonRequest<UserShareSongs> getUserShareSongs(int userId){
+        final String userShareSongUrl = TingUserId + userId + TingUserShareSongs;
+        return new GsonRequest<UserShareSongs>(userShareSongUrl, UserShareSongs.class,
+                null,buildDefaultErrorListener());
+    }
+
+    /**
+     * 获取用户评论信息
+     * @param userId
+     * @return
+     */
+    public static GsonRequest<UserComments> getUserComments(int userId){
+        final String userCommentsUrl = TingUserId + userId + TingUserComments;
+        return new GsonRequest<UserComments>(userCommentsUrl, UserComments.class,
+                null,buildDefaultErrorListener());
+    }
+
      /**
      * 获取歌曲列表集合
      * @param songCount 集合长度
