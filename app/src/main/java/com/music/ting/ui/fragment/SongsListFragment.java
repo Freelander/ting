@@ -41,7 +41,8 @@ public class SongsListFragment extends Fragment {
         songSwipe = (SwipeRefreshLayout) view.findViewById(R.id.song_swipe);
 
         //给刷新控件一个颜色
-        songSwipe.setColorSchemeColors(R.color.colorPrimary);
+        songSwipe.setColorSchemeColors(R.color.colorPrimary, R.color.colorPrimary,
+                R.color.colorPrimary,R.color.colorPrimary);
         //刚进入到界面设置刷新控件正在刷新
         songSwipe.post(new Runnable() {
             @Override
