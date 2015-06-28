@@ -13,7 +13,7 @@ public class UserLikeSongs {
     @SerializedName("liked_songs")
     private List<LikeSongs> likeSongs;
 
-    public List<LikeSongs> getLikeSongs() {
+public List<LikeSongs> getLikeSongs() {
         return likeSongs;
     }
 
@@ -174,7 +174,8 @@ public class UserLikeSongs {
         private int sId;
         private String title;
         private String artist;
-        private String pic;
+        @SerializedName("pic")
+        private String urlPic;
         private String content;
         @SerializedName("user_id")
         private int userId;
@@ -183,7 +184,7 @@ public class UserLikeSongs {
 
         public int getId() {
             return id;
-        }
+    }
 
         public void setId(int id) {
             this.id = id;
@@ -205,12 +206,12 @@ public class UserLikeSongs {
             this.title = title;
         }
 
-        public String getPic() {
-            return pic;
+        public String getUrlPic() {
+            return urlPic;
         }
 
-        public void setPic(String pic) {
-            this.pic = pic;
+        public void setUrlPic(String urlPic) {
+            this.urlPic = urlPic;
         }
 
         public String getContent() {

@@ -1,5 +1,8 @@
 package com.music.ting.model.user;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -75,7 +78,7 @@ public class UserShareSongs {
         }
     }
 
-    public class Songs{
+    public static class Songs implements Parcelable {
 
         @SerializedName("user_id")
         private int userId;
@@ -84,7 +87,8 @@ public class UserShareSongs {
         private int sId;
         private String title;
         private String artist;
-        private String pic;
+        @SerializedName("pic")
+        private String urlPic;
         private String content;
         @SerializedName("comments_count")
         private int commentsCount;
@@ -129,12 +133,12 @@ public class UserShareSongs {
             this.artist = artist;
         }
 
-        public String getPic() {
-            return pic;
+        public String getUrlPic() {
+            return urlPic;
         }
 
-        public void setPic(String pic) {
-            this.pic = pic;
+        public void setUrlPic(String urlPic) {
+            this.urlPic = urlPic;
         }
 
         public String getContent() {
@@ -152,6 +156,47 @@ public class UserShareSongs {
         public void setCommentsCount(int commentsCount) {
             this.commentsCount = commentsCount;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(this.userId);
+            dest.writeInt(this.id);
+            dest.writeInt(this.sId);
+            dest.writeString(this.title);
+            dest.writeString(this.artist);
+            dest.writeString(this.urlPic);
+            dest.writeString(this.content);
+            dest.writeInt(this.commentsCount);
+        }
+
+        public Songs() {
+        }
+
+        private Songs(Parcel in) {
+            this.userId = in.readInt();
+            this.id = in.readInt();
+            this.sId = in.readInt();
+            this.title = in.readString();
+            this.artist = in.readString();
+            this.urlPic = in.readString();
+            this.content = in.readString();
+            this.commentsCount = in.readInt();
+        }
+
+        public static final Parcelable.Creator<Songs> CREATOR = new Parcelable.Creator<Songs>() {
+            public Songs createFromParcel(Parcel source) {
+                return new Songs(source);
+            }
+
+            public Songs[] newArray(int size) {
+                return new Songs[size];
+            }
+        };
     }
 
     public class Avatar {

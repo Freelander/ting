@@ -43,6 +43,8 @@ public class TingAPI {
     private final static String TingSongsApi = TingApi + "/songs";
 
     private final static String TingSongCount = TingSongsApi + "?songs_count=";
+
+    private final static String TingSongsId = TingSongsApi + "?song_id=";
     /**
      * 根据歌曲Id获取评论
      */
@@ -134,6 +136,17 @@ public class TingAPI {
         final String commentUrl = TingCommentApi + songId;
         return new GsonRequest<List<Comments>>(commentUrl,
                 Comments.class,buildDefaultErrorListener());
+    }
+
+    /**
+     * 根据歌曲Id获取歌曲信息
+     * @param songId
+     * @return
+     */
+    public static GsonRequest<Songs> getSongsInfoByIdRequest(int songId){
+        final String songsUrl = TingSongsId + songId;
+        return new GsonRequest<Songs>(songsUrl, Songs.class,
+                null, buildDefaultErrorListener());
     }
 
     /**
