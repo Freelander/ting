@@ -21,7 +21,7 @@ import com.music.ting.data.GsonRequest;
 import com.music.ting.data.RequestManager;
 import com.music.ting.model.Comments;
 import com.music.ting.model.Songs;
-import com.music.ting.model.UserInfo;
+import com.music.ting.model.user.UserInfo;
 import com.music.ting.ui.activity.UserProfileActivity;
 import com.music.ting.ui.widget.RoundImageView;
 import com.music.ting.utils.TingAPI;
@@ -132,7 +132,7 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 public void onResponse(UserInfo userInfo) {
                     mUserInfo = userInfo;
                     Picasso.with(mContext)
-                            .load(userInfo.getAvatar().geturl())
+                            .load(userInfo.getUser().getAvatar().geturl())
                             .placeholder(R.drawable.ic_default_pic)
                             .error(R.drawable.ic_default_pic)
                             .resize(50,50)
@@ -184,9 +184,9 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 public void onResponse(UserInfo userInfo) {
                     hashMap.put(position-2,userInfo);
                     ((CommentViewHolder) viewHolder).commentUser.
-                            setText(userInfo.getName());
+                            setText(userInfo.getUser().getName());
                     Picasso.with(mContext)
-                            .load(userInfo.getAvatar().geturl())
+                            .load(userInfo.getUser().getAvatar().geturl())
                             .placeholder(R.drawable.ic_default_pic)
                             .error(R.drawable.ic_default_pic)
                             .resize(50,50)
