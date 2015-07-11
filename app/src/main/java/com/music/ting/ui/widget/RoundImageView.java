@@ -19,7 +19,7 @@ import com.music.ting.R;
 
 /**
  * 圆形ImageView，可设置最多两个宽度不同且颜色不同的圆形边框。
- * 
+ *
  * @author Alan
  */
 public class RoundImageView extends ImageView {
@@ -124,7 +124,7 @@ public class RoundImageView extends ImageView {
 
 	/**
 	 * 获取裁剪后的圆形图片
-	 * 
+	 *
 	 * @param radius
 	 *            半径
 	 */

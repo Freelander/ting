@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Ting</string>
     <string name="song_info">歌曲详细信息以及评论</string>
+    <string name="user_profile">用户简介信息</string>
 
     <string name="action_about">关于我</string>
     <string name="action_setting">设置</string>
@@ -20,6 +21,7 @@
     <string name="user_name">用户名</string>
     <string name="user_bio">用户个性签名</string>
     <string name="user_image">用户头像</string>
+    <string name="user_email">用户邮箱</string>
 
     <string name="song_name">歌曲名</string>
     <string name="song_artist">歌手</string>
@@ -30,5 +32,12 @@
     <string name="comment_user_pic">评论人头像</string>
     <string name="comment_user_name">评论人名称</string>
     <string name="comment_content">评论信息</string>
+
+    <string name="songs">Songs</string>
+    <string name="likes">Likes</string>
+    <string name="comments">Comments</string>
+    <string name="songs_count">100</string>
+    <string name="likes_count">200</string>
+    <string name="comments_count">100</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.music.ting.ui.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -9,21 +10,30 @@ import android.widget.Toast;
 
 import com.music.ting.R;
 
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+
 /**
  * Created by Jun on 2015/6/1.
  */
-public class AboutActivity extends BaseActivity {
+public class AboutActivity extends SwipeBackActivity {
 
     private static final String url = "https://github.com/Freelander";
     private Toolbar toolbar;
+    private SwipeBackLayout mSwipeBackLayout;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        initToolbar();
+        //initToolbar();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("About Me");
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha));
+        //getSupportActionBar().setTitle("About Me");
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
 
-        getSupportActionBar().setTitle("About Me");
 
         final WebView webView = (WebView) findViewById(R.id.webView);
 

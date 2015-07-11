@@ -46,6 +46,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+
 /**
  * Created by Jun on 2015/5/20.
  *
@@ -105,6 +106,7 @@ public class CommentActivity extends BaseActivity {
         setContentView(R.layout.activity_song_info);
         initToolbar();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         //点击返回键
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +114,7 @@ public class CommentActivity extends BaseActivity {
                 finish();
             }
         });
+
 
         connectToMusicService();//绑定服务
         getData();

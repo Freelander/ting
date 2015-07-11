@@ -2,6 +2,7 @@ package com.music.ting.ui.activity;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -32,11 +33,13 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import me.imid.swipebacklayout.lib.SwipeBackLayout;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 /**
  * Created by Jun on 2015/6/20.
  */
-public class UserProfileActivity extends BaseActivity {
+public class UserProfileActivity extends SwipeBackActivity {
 
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
@@ -64,7 +67,7 @@ public class UserProfileActivity extends BaseActivity {
     private UserShareSongs userShareSongs;
     private UserComments userComments;
     private int userId=0;
-
+    private SwipeBackLayout mSwipeBackLayout;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -72,7 +75,10 @@ public class UserProfileActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         ButterKnife.inject(this);
-        initToolbar();
+
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.abc_ic_ab_back_mtrl_am_alpha));
+
+
         initView();
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -86,16 +92,23 @@ public class UserProfileActivity extends BaseActivity {
         setupViewPage();
 
 
+        mSwipeBackLayout = getSwipeBackLayout();
+        mSwipeBackLayout.setEdgeTrackingEnabled(SwipeBackLayout.EDGE_LEFT);
+
+
 //        getUserShareSons();
 //
 //        getUserLikeSongs();
+
+
 
     }
 
     public void initView(){
         Intent intent = getIntent();
         mUserInfo = intent.getParcelableExtra("UserInfo");
-        getSupportActionBar().setTitle(mUserInfo.getUser().getName());
+        toolbar.setTitle(mUserInfo.getUser().getName());
+        toolbar.setTitleTextColor(Color.WHITE);
         userName.setText(mUserInfo.getUser().getName());
         userBio.setText(mUserInfo.getUser().getBio());
         userEmail.setText(mUserInfo.getUser().getEmail());

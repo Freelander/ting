@@ -3,9 +3,11 @@
     <color name="colorPrimaryDark">#5BBD72</color>
     <color name="colorPrimary">#5BBD72</color>
     <color name="statusBarColor">#4caf50</color>
+    <color name="tabsColor">#7dc98f</color>
     <color name="textColor">#ffffff</color>
 
     <color name="selected_bg">#ffafffe5</color>
     <color name="navigation_text">#8A000000</color>
+    <color name="navigation_select_text">#9A000000</color>
 
 </resources>

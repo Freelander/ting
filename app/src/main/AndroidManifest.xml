@@ -24,11 +24,18 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activity.CommentActivity"
+        <activity
+            android:name=".ui.activity.CommentActivity"
             android:label="@string/song_info"/>
         <activity
             android:name=".ui.activity.AboutActivity"
-            android:label="@string/action_about"/>
+            android:label="@string/action_about"
+            android:theme="@style/app_translucent"/>
+        <activity
+            android:name=".ui.activity.UserProfileActivity"
+            android:label="@string/user_profile"
+            android:theme="@style/app_translucent"/>
+
         <service android:name=".service.MusicService"/>
         <service android:name=".service.DownloadService"/>
     </application>

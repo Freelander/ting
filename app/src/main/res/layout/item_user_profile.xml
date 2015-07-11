@@ -10,8 +10,8 @@
 
     <com.music.ting.ui.widget.RoundImageView
         android:id="@+id/user_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_avatar"/>
 
     <TextView
@@ -27,7 +27,7 @@
         android:textColor="@color/textColor"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/user_bio"
+        android:id="@+id/user_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/user_name"
@@ -36,19 +36,20 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:text="@string/user_bio"
+        android:text="@string/user_email"
         android:textSize="14sp"
         android:textColor="@color/textColor"/>
     <TextView
+        android:id="@+id/user_bio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/user_bio"
+        android:layout_below="@id/user_email"
         android:layout_toRightOf="@id/user_image"
         android:layout_toEndOf="@id/user_image"
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp"
-        android:text="@string/user_email"
+        android:text="@string/user_bio"
         android:textSize="14sp"
         android:textColor="@color/textColor"/>
 
