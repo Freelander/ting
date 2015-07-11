@@ -35,14 +35,20 @@ ADDED from AndroidManifest.xml:9:5
 		ADDED from AndroidManifest.xml:9:22
 application
 ADDED from AndroidManifest.xml:11:5
-MERGED from com.android.support:appcompat-v7:21.0.3:16:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:appcompat-v7:22.2.0:22:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from com.android.support:cardview-v7:21.0.3:16:5
 MERGED from com.android.support:recyclerview-v7:21.0.3:17:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
+MERGED from com.android.support:design:22.2.0:22:5
+MERGED from com.android.support:appcompat-v7:22.2.0:22:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from com.sothree.slidinguppanel:library:3.0.0:9:5
-MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
 MERGED from com.balysv:material-ripple:1.0.2:12:5
+MERGED from me.imid.swipebacklayout.lib:library:1.0.0:11:5
+MERGED from com.android.support:support-v4:22.2.0:22:5
 	android:label
 		ADDED from AndroidManifest.xml:15:9
 	android:allowBackup
@@ -72,34 +78,50 @@ ADDED from AndroidManifest.xml:23:17
 activity#com.music.ting.ui.activity.CommentActivity
 ADDED from AndroidManifest.xml:27:9
 	android:label
+		ADDED from AndroidManifest.xml:29:13
+	android:name
 		ADDED from AndroidManifest.xml:28:13
-	android:name
-		ADDED from AndroidManifest.xml:27:19
 activity#com.music.ting.ui.activity.AboutActivity
-ADDED from AndroidManifest.xml:29:9
+ADDED from AndroidManifest.xml:30:9
 	android:label
+		ADDED from AndroidManifest.xml:32:13
+	android:theme
+		ADDED from AndroidManifest.xml:33:13
+	android:name
 		ADDED from AndroidManifest.xml:31:13
+activity#com.music.ting.ui.activity.UserProfileActivity
+ADDED from AndroidManifest.xml:34:9
+	android:label
+		ADDED from AndroidManifest.xml:36:13
+	android:theme
+		ADDED from AndroidManifest.xml:37:13
 	android:name
-		ADDED from AndroidManifest.xml:30:13
+		ADDED from AndroidManifest.xml:35:13
 service#com.music.ting.service.MusicService
-ADDED from AndroidManifest.xml:32:9
+ADDED from AndroidManifest.xml:39:9
 	android:name
-		ADDED from AndroidManifest.xml:32:18
+		ADDED from AndroidManifest.xml:39:18
 service#com.music.ting.service.DownloadService
-ADDED from AndroidManifest.xml:33:9
+ADDED from AndroidManifest.xml:40:9
 	android:name
-		ADDED from AndroidManifest.xml:33:18
+		ADDED from AndroidManifest.xml:40:18
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
-MERGED from com.android.support:appcompat-v7:21.0.3:15:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:appcompat-v7:22.2.0:20:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
 MERGED from com.android.support:cardview-v7:21.0.3:15:5
 MERGED from com.android.support:recyclerview-v7:21.0.3:15:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
+MERGED from com.android.support:design:22.2.0:20:5
+MERGED from com.android.support:appcompat-v7:22.2.0:20:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
 MERGED from com.sothree.slidinguppanel:library:3.0.0:7:5
-MERGED from com.android.support:support-v4:21.0.3:15:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
 MERGED from com.balysv:material-ripple:1.0.2:8:5
 MERGED from com.daimajia.numberprogressbar:library:1.2:7:5
+MERGED from me.imid.swipebacklayout.lib:library:1.0.0:7:5
+MERGED from com.android.support:support-v4:22.2.0:20:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0
 		INJECTED from AndroidManifest.xml:0:0

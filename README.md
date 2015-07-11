@@ -11,10 +11,13 @@ Ting 网址: http://tinger.herokuapp.com/
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/4.png)
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/5.png)
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/6.png)
+![image](https://github.com/Freelander/ting/blob/master/screenshots/7.png)
+![image](https://github.com/Freelander/ting/blob/master/screenshots/8.png)
+
 
 ## DownLoad
 
-[http://pan.baidu.com/s/1c0bGSvA](http://pan.baidu.com/s/1c0bGSvA)
+[http://pan.baidu.com/s/1kTovLDt](http://pan.baidu.com/s/1kTovLDt)
 
 ## Thanks
 
@@ -28,6 +31,9 @@ Ting 网址: http://tinger.herokuapp.com/
 [numberprogressbar](https://github.com/daimajia/NumberProgressBar) | 带有百分比显示的进度条
 [Volley](https://github.com/mcxiaoke/android-volley) | Google 开发的一个网络请求库
 [Gson](https://github.com/google/gson) | Google 开发的一个解析 json 数据库
+[ButterKnife](https://github.com/avast/android-butterknife-zelezny) | ButterKnife 生成器, 简写 findViewId 代码
+[SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout) | 实现向右滑返回功能
+
 
 ## License
 
