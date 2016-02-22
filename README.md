@@ -17,7 +17,7 @@ Ting 网址: http://tinger.herokuapp.com/
 
 ## DownLoad
 
-[http://pan.baidu.com/s/1kTovLDt](http://pan.baidu.com/s/1kTovLDt)
+[http://fir.im/cd7b](http://fir.im/cd7b)
 
 ## Thanks
 
