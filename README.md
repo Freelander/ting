@@ -1,8 +1,12 @@
-## Ting-一款音乐社交 App
+## Ting
 
-Ting 网址: http://tinger.herokuapp.com/
+Ting is a material design music social media player app, have music playback, download function.
 
-目前 App 只获取 Ting 网站上用户分享的前 20 首歌曲信息, 以及歌曲评论信息
+Ting Official website: http://tinger.herokuapp.com/
+
+At present, In the app only access to Ting official website users to share the first 20 songs  info and songs comment info.
+
+#### [中文文档](https://github.com/Freelander/ting/blob/master/README_ZH.md)
 
 ## ScreenShots
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/1.png)
@@ -14,31 +18,27 @@ Ting 网址: http://tinger.herokuapp.com/
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/7.png)
 ![image](https://github.com/Freelander/ting/blob/master/screenshots/8.png)
 
-
-## DownLoad
-
-[http://fir.im/cd7b](http://fir.im/cd7b)
+##### [DownLoad](http://fir.im/cd7b)
 
 ## Thanks
 
-**使用到的一些开源库** 
+** Open source library** 
 
-库名 | 简介
+Project | Introduction
 ---- | ----
-[Picasso](https://github.com/square/picasso) | Square 公司开源的图片缓存库
-[AndroidSlidingUpPanel](https://github.com/umano/AndroidSlidingUpPanel) | 向上滑面板
-[material-ripple](https://github.com/balysv/material-ripple) | 让 App 在 Android 5.0 以下版本点击任何 View 都带有水波纹效果
-[numberprogressbar](https://github.com/daimajia/NumberProgressBar) | 带有百分比显示的进度条
-[Volley](https://github.com/mcxiaoke/android-volley) | Google 开发的一个网络请求库
-[Gson](https://github.com/google/gson) | Google 开发的一个解析 json 数据库
-[ButterKnife](https://github.com/avast/android-butterknife-zelezny) | ButterKnife 生成器, 简写 findViewId 代码
-[SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout) | 实现向右滑返回功能
-
+[Picasso](https://github.com/square/picasso) | A powerful image downloading and caching library for Android
+[AndroidSlidingUpPanel](https://github.com/umano/AndroidSlidingUpPanel) | This library provides a simple way to add a draggable sliding up panel to your Android application
+[material-ripple](https://github.com/balysv/material-ripple) | Android L Ripple effect wrapper for Views
+[numberprogressbar](https://github.com/daimajia/NumberProgressBar) | A beautiful, slim Android ProgressBar
+[Volley](https://github.com/mcxiaoke/android-volley) | Google network frameworks
+[Gson](https://github.com/google/gson) | A Java library that can be used to convert Java Objects into their JSON representation
+[ButterKnife](https://github.com/JakeWharton/butterknife) | Bind Android views and callbacks to fields and methods
+[SwipeBackLayout](https://github.com/ikew0ng/SwipeBackLayout) | An Android library that help you to build app with swipe back gesture
 
 ## License
 
 ```
-Copyright 2015 Freelander of copyright owner
+Copyright 2015~2016 Freelander of copyright owner
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
