@@ -22,7 +22,7 @@ At present, In the app only access to Ting official website users to share the f
 
 ## Thanks
 
-** Open source library ** 
+**Open source library** 
 
 Project | Introduction
 ---- | ----
